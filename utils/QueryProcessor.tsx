@@ -84,6 +84,7 @@ export default function QueryProcessor(query: string): string {
         let num2 = parseInt(match[2], 10);
         return "num1 * num2";
   }
+}
 
   return "";
 }
