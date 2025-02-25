@@ -82,8 +82,19 @@ export default function QueryProcessor(query: string): string {
     if (match) {
         let num1 = parseInt(match[1], 10);
         let num2 = parseInt(match[2], 10);
-        return "num1 * num2";
+        return `${num1 * num2}`;;
   }
+}
+
+if (query.toLowerCase().includes("minus")) {
+  const regex = /(\d+)\s+multiplied by\s+(\d+)/;
+  const match = query.match(regex);
+  
+  if (match) {
+      let num1 = parseInt(match[1], 10);
+      let num2 = parseInt(match[2], 10);
+      return `${num1 - num2}`;;
+}
 }
 
   return "";
