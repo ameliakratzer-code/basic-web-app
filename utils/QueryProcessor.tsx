@@ -75,5 +75,15 @@ export default function QueryProcessor(query: string): string {
     return "91";
   }
 
+  if (query.toLowerCase().includes("multiplied")) {
+    const regex = /(\d+)\s+multiplied by\s+(\d+)/;
+    const match = query.match(regex);
+    
+    if (match) {
+        let num1 = parseInt(match[1], 10);
+        let num2 = parseInt(match[2], 10);
+        return "num1 * num2";
+  }
+
   return "";
 }
